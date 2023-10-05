@@ -1,5 +1,5 @@
 {
-  "name": "typescript-boilerplate",
+  "name": "nestjs-googleapi",
   "version": "1.0.0",
   "author": "Pouria Mirebrahimi <pouria.mirebrahimi@gmail.com>",
   "license": "MIT",
@@ -7,18 +7,27 @@
   "engines": {
     "node": ">= 18.12 <19"
   },
+  "repository": "git@github.com:pouria-mirebrahimi/nestjs-googleapi.git",
+  "keywords": [
+    "nestjs",
+    "nest",
+    "google",
+    "googleapi",
+    "nestjs-googleapi"
+  ],
   "scripts": {
-    "dev": "ts-node-dev --cls --respawn src/index.ts",
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/index.js",
-    "clean": "rimraf coverage dist tmp",
-    "prebuild": "yarn lint",
     "build:watch": "tsc -w -p tsconfig.json",
     "build:release": "yarn clean && tsc -p tsconfig.release.json",
+    "prebuild": "yarn lint",
+    "prepublish": "yarn build",
+    "publish:public": "yarn publish --access public",
     "lint": "eslint . --ext .ts --ext .mts",
-    "test": "jest --coverage",
+    "clean": "rimraf coverage dist tmp",
     "prettier": "prettier --config .prettierrc --write .",
-    "test:watch": "jest --watch"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage"
   },
   "devDependencies": {
     "@tsconfig/node18": "^2.0.1",
@@ -32,8 +41,11 @@
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.0.4"
   },
-  "repository": "git@github.com:pouria-mirebrahimi/typescript-boilerplate.git",
   "dependencies": {
+    "@googleapis/calendar": "^9.3.1",
+    "dotenv": "^16.3.1",
+    "google-auth-library": "^9.0.0",
+    "googleapis": "^126.0.1",
     "moment-timezone": "^0.5.43"
   }
 }

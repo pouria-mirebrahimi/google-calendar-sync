@@ -1,31 +1,19 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "CommonJS",
+    "target": "ES2017",
     "declaration": true,
+    "noImplicitAny": false,
     "removeComments": true,
+    "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "ES2017",
-    "sourceMap": true,
+    "sourceMap": false,
     "outDir": "./dist",
-    "baseUrl": "./",
-    "paths": {
-      "@app-common": ["src/lib"],
-      "@app-common/*": ["src/lib/*"],
-    },
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "useUnknownInCatchVariables": false
+    "rootDir": "./lib",
+    "skipLibCheck": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules"],
+  "include": ["lib/**/*", "../index.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"],
   "extends": "@tsconfig/node18/tsconfig.json"
 }
