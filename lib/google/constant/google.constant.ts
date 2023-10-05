@@ -1,0 +1,1 @@
+export const GOOGLE_OPTIONS = 'GOOGLE_OPTIONS';

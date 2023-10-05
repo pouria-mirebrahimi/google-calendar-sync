@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@googleapis/calendar": "^9.3.1",
+    "@nestjs/common": "^10.2.7",
     "dotenv": "^16.3.1",
     "google-auth-library": "^9.0.0",
     "googleapis": "^126.0.1",
